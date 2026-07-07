@@ -1,0 +1,455 @@
+/* =========================================================
+   AI-Powered IoT SOC Dashboard — Professional Dark Theme
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Base Reset & Background ── */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+    background-color: #090d16 !important;
+    color: #cbd5e1 !important;
+}
+
+/* Dark layered background */
+.stApp {
+    background: #090d16 !important;
+    min-height: 100vh;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+h1 { font-size: 1.875rem !important; }
+h2 { font-size: 1.375rem !important; }
+h3 { font-size: 1.05rem  !important; font-weight: 600 !important; }
+
+p, li, span, label {
+    color: #94a3b8 !important;
+}
+
+/* ── Main Content Area ── */
+.main .block-container {
+    padding: 2rem 2.5rem 3rem !important;
+    max-width: 1400px;
+}
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+    background: #0b0f19 !important;
+    border-right: 1px solid #1e293b !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-testid="stSidebar"] > div {
+    padding: 1.5rem 1rem !important;
+}
+
+/* Sidebar nav links */
+[data-testid="stSidebarNavLink"] {
+    border-radius: 8px !important;
+    margin: 2px 0 !important;
+    transition: all 0.2s ease !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stSidebarNavLink"]:hover {
+    background: #1e293b !important;
+    color: #818cf8 !important;
+}
+
+[data-testid="stSidebarNavLink"][aria-current="page"] {
+    background: #1e1b4b !important;
+    color: #a5b4fc !important;
+    border-left: 3px solid #6366f1 !important;
+    font-weight: 600 !important;
+}
+
+/* ── Metric Cards ── */
+div[data-testid="metric-container"] {
+    background: #151f32 !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2),
+                0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+div[data-testid="metric-container"]::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.15) !important;
+    border-color: #312e81 !important;
+}
+
+div[data-testid="stMetricValue"] {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #818cf8 !important;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+div[data-testid="stMetricLabel"] {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    color: #64748b !important;
+}
+
+div[data-testid="stMetricDelta"] {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+}
+
+/* Plotly chart wrapper */
+div[data-testid="stPlotlyChart"] {
+    background: #151f32 !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+div[data-testid="stPlotlyChart"]:hover {
+    border-color: #312e81 !important;
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.12) !important;
+}
+
+/* ── Dataframes & Tables ── */
+div[data-testid="stDataFrame"] {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dataframe {
+    background-color: #151f32 !important;
+    border: none !important;
+    color: #cbd5e1 !important;
+}
+
+.dataframe th {
+    background: #0f172a !important;
+    color: #94a3b8 !important;
+    font-weight: 700 !important;
+    font-size: 0.73rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+.dataframe tr:nth-child(even) {
+    background-color: #0f172a !important;
+}
+
+.dataframe tr:hover {
+    background-color: #1e1b4b !important;
+}
+
+/* ── Status Badges ── */
+.status-green  { color: #4ade80 !important; font-weight: 700 !important; }
+.status-yellow { color: #fbbf24 !important; font-weight: 700 !important; }
+.status-red    { color: #f87171 !important; font-weight: 700 !important; }
+
+/* ── Buttons ── */
+.stButton > button {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    letter-spacing: 0.02em;
+    padding: 0.6rem 1.4rem !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2) !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%) !important;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Download button */
+.stDownloadButton > button {
+    background: #151f32 !important;
+    border: 1px solid #334155 !important;
+    color: #818cf8 !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.stDownloadButton > button:hover {
+    background: #1e1b4b !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ── File Uploader ── */
+[data-testid="stFileUploadDropzone"] {
+    background: #0f172a !important;
+    border: 2px dashed #334155 !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    border-color: #6366f1 !important;
+    background: #1e1b4b !important;
+}
+
+/* ── Alerts / Banners ── */
+div[data-testid="stAlert"] {
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+/* Success */
+div[data-testid="stAlert"][data-baseweb="notification"][kind="positive"],
+.stSuccess {
+    background: #022c22 !important;
+    border-left: 4px solid #10b981 !important;
+    color: #a7f3d0 !important;
+}
+
+/* Warning */
+div[data-testid="stAlert"][data-baseweb="notification"][kind="warning"],
+.stWarning {
+    background: #451a03 !important;
+    border-left: 4px solid #f59e0b !important;
+    color: #fde68a !important;
+}
+
+/* Error */
+div[data-testid="stAlert"][data-baseweb="notification"][kind="error"],
+.stError {
+    background: #450a0a !important;
+    border-left: 4px solid #ef4444 !important;
+    color: #fecaca !important;
+}
+
+/* Info */
+div[data-testid="stAlert"][data-baseweb="notification"][kind="info"],
+.stInfo {
+    background: #172554 !important;
+    border-left: 4px solid #3b82f6 !important;
+    color: #bfdbfe !important;
+}
+
+/* ── Expanders ── */
+details[data-testid="stExpander"] {
+    background: #151f32 !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
+    transition: border-color 0.2s ease !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+details[data-testid="stExpander"]:hover {
+    border-color: #312e81 !important;
+}
+
+details[data-testid="stExpander"] summary {
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    padding: 1rem 1.25rem !important;
+}
+
+/* ── Select / Input Widgets ── */
+.stSelectbox label,
+.stMultiSelect label,
+.stTextInput label,
+.stNumberInput label,
+.stSlider label {
+    color: #64748b !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+}
+
+div[data-baseweb="select"] > div {
+    background: #151f32 !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    transition: border-color 0.2s ease !important;
+}
+
+div[data-baseweb="select"] > div:hover {
+    border-color: #6366f1 !important;
+}
+
+/* ── Spinner ── */
+.stSpinner > div {
+    border-top-color: #6366f1 !important;
+}
+
+/* ── Progress Bar ── */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #6366f1, #818cf8) !important;
+    border-radius: 99px !important;
+}
+
+.stProgress > div > div > div {
+    background: #1e293b !important;
+    border-radius: 99px !important;
+}
+
+/* ── Horizontal Rules ── */
+hr {
+    border: none !important;
+    border-top: 1px solid #1e293b !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* ── Page Title ── */
+h1 {
+    color: #ffffff !important;
+    margin-bottom: 0.25rem !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── Section Headers (h3) ── */
+h3 {
+    color: #94a3b8 !important;
+    border-bottom: 1px solid #1e293b !important;
+    padding-bottom: 0.4rem !important;
+    margin-top: 1.5rem !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+}
+
+/* ── Status dot ── */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* ── Sidebar Section Labels ── */
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    font-size: 0.7rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    border-bottom: 1px solid #1e293b !important;
+    padding-bottom: 0.4rem !important;
+    margin-top: 1.2rem !important;
+}
+
+/* ── Sidebar markdown text ── */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] li,
+[data-testid="stSidebar"] span {
+    color: #94a3b8 !important;
+    font-size: 0.85rem !important;
+}
+
+/* ── Metric delta arrows ── */
+div[data-testid="stMetricDeltaIcon-Up"] {
+    color: #4ade80 !important;
+}
+
+div[data-testid="stMetricDeltaIcon-Down"] {
+    color: #f87171 !important;
+}
+
+/* ── Top accent bar ── */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1 0%, #818cf8 50%, #6366f1 100%);
+    z-index: 9999;
+}
+
+/* ── Code / Mono text ── */
+code {
+    background: #0f172a !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 4px !important;
+    color: #a5b4fc !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.82em !important;
+    padding: 0.1em 0.4em !important;
+}
+
+/* ── Tabs ── */
+button[data-baseweb="tab"] {
+    background: transparent !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    transition: color 0.2s, border-color 0.2s !important;
+}
+
+button[data-baseweb="tab"]:hover {
+    color: #818cf8 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #818cf8 !important;
+    border-bottom-color: #818cf8 !important;
+    background: transparent !important;
+}
