@@ -245,7 +245,7 @@ AI-IoT-SOC/
 Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
+https://github.com/RihanC/Intrusion_Detection_System.git
 ```
 
 Navigate to the project
